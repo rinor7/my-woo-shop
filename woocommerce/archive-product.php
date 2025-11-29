@@ -32,15 +32,19 @@ if ( woocommerce_product_loop() ) {
         //     dynamic_sidebar( 'widget-6' );
         // }
         // WooCommerce filter widgets (price, attributes, etc.)
-       if ( class_exists('WC_Widget_Layered_Nav') ) {
+        // Display custom collapsible product categories
+        include get_template_directory() . '/woocommerce/widgets/product-categories-collapsible.php';
+
+        // Other WooCommerce filter widgets
+        if ( class_exists('WC_Widget_Layered_Nav') ) {
 
             $widgets = [
                 'WC_Widget_Layered_Nav',
                 'WC_Widget_Layered_Nav_Filters',
                 'WC_Widget_Price_Filter',
                 'WC_Widget_Attribute_Filter',
-                'WC_Widget_Product_Tag_Cloud',
-                'WC_Widget_Product_Categories',
+                // 'WC_Widget_Product_Tag_Cloud',
+                // 'WC_Widget_Product_Categories', // Using custom collapsible version instead
                 // 'WC_Widget_Product_Search',
             ];
 
