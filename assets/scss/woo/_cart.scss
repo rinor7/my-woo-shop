@@ -1,0 +1,7 @@
+.wc-block-cart__submit {
+    &.wp-block-woocommerce-proceed-to-checkout-block {
+        .wp-element-button {
+            @include button;
+        }
+    }
+}

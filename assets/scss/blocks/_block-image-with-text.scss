@@ -1,0 +1,127 @@
+/* Image - Text style Start */
+.block-image-with-text {
+    // padding: 0 0 40px 0;
+    .row {
+        @include md {
+            row-gap: 20px;
+        }
+    }
+
+    .lefts {
+        align-self: center;
+        .img {
+            width: 100%;
+            height: 220px;
+            border-radius: 16px;
+            overflow: hidden;
+            @include min-md { 
+                height: 400px;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    .rights {
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        row-gap: 9px;
+        h2 {
+            font-size: 34px;
+            line-height: 36px;
+            font-weight: 800;
+            @include min-md {
+                font-size: 54px;
+                line-height: 56px;
+            }
+            span {
+                color: $brown-02;
+                display: block;
+            }
+        }
+        .paragraph-second {
+            font-size: 14px;
+            line-height: 22px;
+            span {
+                color: $brown-02;
+            }
+        }
+        .paragraph-third {
+            font-size: 12px;
+            line-height: 20px;
+            span {
+                color: $brown-02;
+            }
+        }
+        .buttons {
+            display: flex;
+            column-gap: 20px;
+            flex-wrap: wrap;
+            row-gap: 10px;
+            a {
+                @include button;
+                min-width: 140px!important;
+            }
+            .two-btns {
+                display: flex;
+                flex-direction: column;
+                row-gap: 15px;
+            }
+        }
+    }
+}
+
+.image-no-container-left {
+    position: relative;
+    padding-top: 0;
+
+    .row {
+        @include md {
+            row-gap: 20px;
+        }
+
+        @include xs {
+            row-gap: 0;
+        }
+    }
+
+    .rights {
+        padding-top: 60px;
+        padding-bottom: 60px;
+        margin-left: auto;
+    }
+
+    .lefts {
+        flex: unset;
+        max-width: unset;
+        position: relative;
+        width: 100%;
+        left: 0;
+        height: 100%;
+        top: 0;
+        align-self: unset;
+
+        @include xs {
+            padding-right: 0;
+            padding-left: 0;
+        }
+
+        @include min-md {
+            width: 50%;
+            position: absolute;
+            padding-left: 0;
+        }
+
+        .img {
+            @include min-xs {
+                height: 100%;
+            }
+        }
+    }
+}
+
+/* Image - Text style END */

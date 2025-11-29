@@ -1,0 +1,209 @@
+/* General style START*/
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+p,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+li {
+    list-style-type: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+button,
+input {
+    outline: none;
+    border: none;
+}
+
+body {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    font-family: base-theme;
+    &.overflow-hidden {
+        overflow: hidden;
+    }
+}
+
+.d-none {
+    display: none !important;
+}
+
+.d-none-desktop {
+    @include min-md {
+        display: none;
+    }
+}
+
+.d-none-mobile {
+    @include md {
+        display: none;
+    }
+}
+
+p,
+h2,
+h1,
+h3 {
+    margin-bottom: 0;
+}
+
+.tab-content>.tab-pane {
+    display: none;
+}
+
+.fade:not(.show) {
+    opacity: 0;
+}
+
+.fade {
+    transition: opacity .15s linear;
+}
+
+.tab-content>.active {
+    display: block;
+}
+
+.centerize {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.flex {
+    display: flex;
+}
+
+.block {
+    display: block;
+}
+
+#primary {
+    @include min-md {
+        min-height: 75vh;
+    }
+}
+
+//class for title
+.section-header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    row-gap: 14px;
+    max-width: 950px;
+    margin: auto;
+    position: relative;
+    padding-top: 40px;
+    &:before {
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="31.637" height="32" viewBox="0 0 31.637 32"><g id="Group_5725" data-name="Group 5725" transform="translate(0 0)"><path id="Path_2573" data-name="Path 2573" d="M222.346,309.231c1.612-1.388,1.979-3.683,1.883-5.7a15.531,15.531,0,0,0-.432-2.9,16.7,16.7,0,0,0-4.079-7.77,6.342,6.342,0,0,0-2.617-1.712,9.467,9.467,0,0,0-8.268,1.794,15.946,15.946,0,0,0-3.335,3.448,10.773,10.773,0,0,0-2.256,4.957,4.493,4.493,0,0,0,2.023,4.508,5.1,5.1,0,0,0,3.359.5c1.232-.217,2.449-.817,3.676-.727,2.646.194,4.159,3.156,6.409,4.215a3.325,3.325,0,0,0,3.638-.613" transform="translate(-201.464 -278.144)" fill="%23ddb892"/><path id="Path_2574" data-name="Path 2574" d="M129.906,87.923a9.906,9.906,0,0,0,1.016-1.8,7.387,7.387,0,0,0,.836-3.6,2.474,2.474,0,0,0-3.294-2.127c-2.95.727-4.614,3.839-5.206,6.594-.244,1.133-.124,2.682,1,3.312s2.515.14,3.55-.451a6.668,6.668,0,0,0,2.1-1.928" transform="translate(-105.51 -76.795)" fill="%23ddb892"/><path id="Path_2575" data-name="Path 2575" d="M369.507,6.767a10.616,10.616,0,0,0-.342-4.049A3.966,3.966,0,0,0,367.688.393c-2.406-1.553-4.438,1.872-4.813,3.843a10.324,10.324,0,0,0,.373,4.911l.029.094c.436,1.384,1.633,2.8,3.217,2.256a4.283,4.283,0,0,0,2.336-2.281,7.872,7.872,0,0,0,.677-2.45" transform="translate(-353.747 -0.001)" fill="%23ddb892"/><path id="Path_2576" data-name="Path 2576" d="M5.165,318.1a7.7,7.7,0,0,0,2.35-2.283c.814-1.169,1.241-3.061-.143-3.994a3.975,3.975,0,0,0-3.617-.088A6.562,6.562,0,0,0,.193,315.5a2.629,2.629,0,0,0,.74,3.1c1.277.824,3.041.13,4.233-.507" transform="translate(23.366 -297.77)" fill="%23ddb892"/><path id="Path_2577" data-name="Path 2577" d="M567.77,144.612a6.458,6.458,0,0,0-3.184-3.576,2.3,2.3,0,0,0-3.21,1.24,4.62,4.62,0,0,0,.322,3.88,6.545,6.545,0,0,0,3.268,3.2,2.529,2.529,0,0,0,2.687-.665c.979-1.107.611-2.837.117-4.08" transform="translate(-561.09 -134.656)" fill="%23ddb892"/></g></svg>');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        width: 31.637px;
+        height: 32px;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+    &-title {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 30px;
+        @include min-md {
+            font-size: 32px;
+            line-height: 40px;
+        }
+    }
+    &-subtitle {
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: 400;
+    }
+}
+
+.header-sticky {
+     &.body-on-scroll {
+         header {
+             width: 100%;
+             position: fixed;
+             top: 0;
+         }
+         #page {
+            // top: 70px;
+            position: relative;
+         }
+     }
+ }
+
+#page {
+    top: var(--header-height);
+}
+
+.wpcf7-not-valid-tip {
+    display: none;
+}
+
+.wpcf7 {
+    .wpcf7-not-valid {
+        border-width: 2px !important;
+        border-color: $red !important;
+    }
+}
+
+.wpcf7-response-output {
+    margin: 24px 0 0 0 !important;
+    border-radius: 20px;
+    background: #ffb9007d;
+    color: $white;
+    font-size: 14px;
+}
+
+.privacy-policy, .page-template-default {
+    .site-default {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        @include md {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+    }
+}
+
+body {
+    &.page-template-frontpage, &.page-template-contact, &.page-template-about-us {
+        .site-main {
+            display: flex;
+            flex-direction: column;
+            row-gap: 60px;
+            .block-small-swiper {
+                margin-top: -60px;
+            }
+        }
+    }
+}
+/* General style END*/

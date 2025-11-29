@@ -1,0 +1,137 @@
+.custom-woocommerce-archive-product {
+    
+}
+
+body {
+    &.archive, &.page-template-page-shop {
+        .woocommerce-products-header {
+            h1 {
+
+            }
+        }
+        .listing-row {
+            .col-lg-4, .col-lg-3 {
+                .widget-wrapper {
+                    // background-color: $grey-02;
+                    border-radius: 4px;
+                    border: 1px solid $border-color-3;
+                    overflow: hidden;
+                    .widget {
+                        .widgettitle {
+                            padding: 12px;
+                            font-size: 14px;
+                            line-height: 19px;
+                            background-color: $grey-02;
+                        }
+                        form, ul {
+                            padding: 12px;
+                        }
+                    }
+                    
+                    .widget_price_filter {
+                        form {
+                            .price_slider_wrapper {
+                                .price_slider {
+                                    background-color: $grey-02;
+                                }
+                                .ui-slider-range {
+                                    background-color: $brown-01;
+                                }
+                                .ui-slider-handle {
+                                    background-color: $brown-02;
+                                }
+                                .price_slider_amount {
+                                        flex-wrap: wrap;
+                                        display: flex;
+                                        justify-content: space-between;
+                                        row-gap: 12px;
+                                        align-items: center;
+                                    button {
+                                        @include button;
+                                        min-width: 80px!important;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .chosen {
+                        font-size: 14px;
+                    }
+                }
+            }
+            .col-lg-8, .col-lg-9 {
+                .sorting-filter {
+                    margin-bottom: 24px!important;
+                }
+                .shop-page {
+                    margin-bottom: 48px;
+                }
+                .woocommerce-ordering {
+                    margin-bottom: 0;
+                }
+                .row-listing {
+                    row-gap: 24px;
+                    @include md {
+                        // row-gap: 24px;   
+                    }
+                }
+                .col-12 {
+                    form {
+                        width: 100%;
+                        select {
+                            background-color: $grey-02;
+                            border-radius: 4px;
+                            border: unset;
+                            height: 40px;
+                        }
+                    }
+                }
+            }
+            .woocommerce-pagination {
+                .page-numbers {
+                    li {
+                        .page-numbers {
+                            &.current {
+                                background: $brown-02;
+                            }
+                        }
+                        a {
+                            &:hover {
+                                background: $brown-03;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.page-template-page-shop {
+    }
+}
+
+.site-main {
+    margin-top: 16px;
+    .woocommerce-breadcrumb {
+        margin-bottom: 16px;
+        a, font {
+            font-size: 14px;
+            line-height: 17px;
+        }
+
+        // Target font elements that are direct children of breadcrumb but not inside a
+        > font {
+            color: $brown-02;
+        }
+    }
+    .woocommerce-products-header {
+        font-size: 32px;
+        line-height: 39px;
+        color: $black;
+        font-weight: 700;
+        margin-bottom: 16px;
+        @include md {
+            font-size: 24px;
+            line-height: 29px;
+        }
+    }
+}

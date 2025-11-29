@@ -1,0 +1,73 @@
+/* 4 Boxes style Start */
+.three-box-contact__section {
+    // padding: 40px 0 10px 0;
+    // @include md {
+    //     padding: 40px 0;
+    // }
+    .row {
+        row-gap: 20px;
+    }
+
+    .box {
+        .box__wrap {
+            display: flex;
+            background-color: $grey-02;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            justify-content: flex-start;
+            height: 100%;
+            border-radius: 16px;
+            padding: 24px;
+            flex-direction: column;
+            row-gap: 8px;
+            @include min-md {
+                row-gap: 16px;
+                justify-content: center;
+            }
+            .upside {
+                display: flex;
+                row-gap: 16px;
+                align-items: center;
+                column-gap: 16px;
+                @include min-md {
+                    flex-direction: column;
+                }
+            }
+            .img {
+                    width: 26px;
+                    height: 26px;
+                @include min-md {
+                    width: 42px;
+                    height: 42px;
+                }
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                } 
+            }
+
+            .box__title {
+                font-size: 18px;
+                font-weight: 500;
+                color: $black;
+                line-height: 23px;
+            }
+            .box__subtitle {
+                font-size: 14px;
+                color: $black;
+                opacity: .6;
+                a {
+                    &:hover {
+                        text-decoration: underline;
+                        @include transition;
+                        color: $brown-01;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* 4 Boxes style END */

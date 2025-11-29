@@ -1,0 +1,133 @@
+/*Archive page Start*/
+.site-archive {
+    &.archive-page {
+        &-main-posts {
+            .archive-layout {
+                display: flex;
+                gap: 30px;
+                padding: 40px 0;
+        
+                @include md {
+                    flex-direction: column;
+                    gap: 20px;
+                    padding: 0px 0px 40px 0;
+                }
+                .archive-content {
+                    flex: 1;
+                    min-width: 0; // Prevents flex item from overflowing
+                    .articles {
+                        @include md {
+                            row-gap: 30px;
+                        }
+                        article {
+                            .main-image {
+                                .wp-post-image {
+                                    object-fit: cover;
+                                    width: 100%;
+                                    border-radius: 6px;
+                                    height: 220px;
+                                    @include md {
+                                        height: 320px;
+                                    }
+                                    @include sm {
+                                        height: 190px;
+                                    }
+                                }
+                            }
+                            .transparent-bg {
+                                background-color: $grey-02;
+                                display: flex;
+                                justify-content: center;
+                                text-align: center;
+                                width: 100%;
+                                height: 220px;
+                                border-radius: 6px;
+                                align-items: center;
+                                height: 220px;
+                                @include md {
+                                    height: 320px;
+                                }
+                                @include sm {
+                                    height: 190px;
+                                }
+                                img {
+                                    object-fit: contain;
+                                }
+                            }
+                        }
+                        .entry-title {
+                            font-size: 20px;
+                            line-height: 28px;
+                            font-weight: 700;
+                            margin-bottom: 4px;
+                            color: $brown-01;
+                            margin-top: 12px;
+                        }
+                        .entry-excerpt {
+                            font-size: 16px;
+                            line-height: 24px;
+                            font-weight: 400;
+                            color: $brown-01;
+                            @include md {
+                                font-size: 14px;
+                                line-height: 20px;
+                            }
+                        }
+                        .entry-category {
+                            font-size: 14px;
+                            line-height: 20px;
+                            font-weight: 500;
+                            span {
+                                font-size: 12px;
+                                line-height: 26px;
+                                font-weight: 400;
+                                color: $brown-02;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #secondary {
+        background-color: $grey-02;
+        border-radius: 6px;
+        padding: 16px;
+        flex: 0 0 300px; // Fixed width for sidebar
+        max-width: 300px;
+        height: 100%;
+        @media (max-width: 991.98px) {
+            flex: none;
+            max-width: 100%;
+        }
+
+        .widget-title {
+            font-size: 20px;
+            line-height: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: $brown-01;   
+            display: block;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .cat-item {
+            a {
+                font-size: 16px;
+                line-height: 24px;
+                font-weight: 400;
+                color: $brown-01;
+                transition: all .3s ease-in-out;
+            }
+            a:hover {
+                color: $brown-02;
+            }
+        }
+    }
+}
+
+/*Archive page END*/

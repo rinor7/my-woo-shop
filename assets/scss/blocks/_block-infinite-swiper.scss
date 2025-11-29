@@ -1,0 +1,29 @@
+.gallery__section {
+    // margin-bottom: 40px;
+    .mySwiper-gallery {
+        padding-left: 16px;
+        .swiper-slide {
+            height: 350px;
+            width: 350px;
+            border-radius: 16px;
+            overflow: hidden;
+            @include md {
+                height: 300px;
+                width: 300px;
+            }
+            @include sm {
+                height: 250px;
+                width: 250px;
+            }
+            @include xs {
+                height: 150px;
+                width: 150px;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
