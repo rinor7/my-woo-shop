@@ -4,7 +4,7 @@
     //     padding-top: 40px;
     // }
     .row {
-        @include md {
+        @include lg {
             row-gap: 24px;
         }
         .col {
