@@ -46,10 +46,11 @@ if ( woocommerce_product_loop() ) {
 
             foreach ( $widgets as $widget ) {
                 ob_start();
-                the_widget( $widget );
+                // suppress warnings inside widget output
+                @$the_widget_output = the_widget( $widget, array(), array( 'widget_id' => 'temp', 'widget_name' => 'temp' ) );
                 $content = trim( ob_get_clean() );
 
-                if ( $content !== '' ) {
+                if ( ! empty( $content ) ) {
                     echo $content;
                 }
             }
