@@ -110,6 +110,7 @@
             .product_type_variable, .product_type_simple.add_to_cart_button {
                 // background-color: $brown-02;
                 @include button;
+                min-width: unset;
             }
             .added_to_cart {
                 background-color: $brown-02;
