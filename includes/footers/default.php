@@ -4,10 +4,10 @@
  */
 ?>
 
-<?php get_template_part('includes/blocks/newsletter-or-form', null, array()); ?>
-
-
 <footer id="footer-site" class="site-footer">
+    
+    <?php get_template_part('includes/blocks/newsletter-or-form', null, array()); ?>
+
     <div class="site-footer-columns">
         <div class="container" id="foooter">
             <div class="row">

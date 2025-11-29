@@ -46,7 +46,7 @@ $grey-color: #888;
     padding-left: 12px;
     padding-right: 12px;
     border: 1px solid transparent;
-    color: $black;
+    color: $black!important;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -62,7 +62,7 @@ $grey-color: #888;
         $brown-03 50%,
         $brown-02 65%,
         mix($brown-01, $brown-02, 40%) 100%
-    );
+    )!important;
 
     border-radius: 20px;
 
@@ -90,10 +90,10 @@ $grey-color: #888;
         box-shadow:
             0 14px 26px -12px rgba(67, 40, 24, 0.6),
             0 4px 23px rgba(0, 0, 0, 0.3),
-            0 8px 10px -5px rgba(67, 40, 24, 0.4);
-        background-position: right center;
-        background-color: $brown-02;
-        border-color: transparent;
+            0 8px 10px -5px rgba(67, 40, 24, 0.4)!important;
+        background-position: right center!important;
+        background-color: $brown-02!important;
+        border-color: transparent!important;
     }
 }
 

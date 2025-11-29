@@ -126,49 +126,6 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 <?php endif; ?>
 </div>
 
-<style>
-.woocommerce-account-container {
-	max-width: 600px;
-	margin: 0 auto;
-}
-
-.account-tabs {
-	display: flex;
-	gap: 1rem;
-	margin-bottom: 2rem;
-	border-bottom: 1px solid #ddd;
-}
-
-.account-tab-button {
-	padding: 1rem 2rem;
-	background: none;
-	border: none;
-	border-bottom: 3px solid transparent;
-	cursor: pointer;
-	font-size: 1rem;
-	font-weight: 600;
-	color: #666;
-	transition: all 0.3s ease;
-}
-
-.account-tab-button:hover {
-	color: #000;
-}
-
-.account-tab-button.active {
-	color: #000;
-	border-bottom-color: #000;
-}
-
-.account-tab-content {
-	display: none;
-}
-
-.account-tab-content.active {
-	display: block;
-}
-</style>
-
 <script>
 document.addEventListener('DOMContentLoaded', function() {
 	const tabButtons = document.querySelectorAll('.account-tab-button');
