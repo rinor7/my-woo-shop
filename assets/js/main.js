@@ -236,24 +236,6 @@ var swiperGallery = new Swiper(".mySwiper-gallery", {
 //     });
 // });
 
-// Calculate Header Height
-jQuery(document).ready(function($) {
-    function adjustPageOffset() {
-        var headerHeight = $('header').outerHeight(); // Measure <header> height
-
-        // Set the header height as a global CSS variable
-        document.documentElement.style.setProperty('--header-height', headerHeight + 'px');
-    }
-
-    // Run on load
-    adjustPageOffset();
-
-    // Run again on resize (in case header height changes)
-    $(window).on('resize', function() {
-        adjustPageOffset();
-    });
-});
-
 
 // Move YITH Wishlist Button into custom wrapper
 jQuery(function($) {
@@ -311,5 +293,23 @@ document.addEventListener("DOMContentLoaded", function () {
             bigImage.srcset = newSrcset;
             bigImage.sizes = newSizes;
         });
+    });
+});
+
+// Calculate Header Height
+jQuery(document).ready(function($) {
+    function adjustPageOffset() {
+        var headerHeight = $('header').outerHeight(); // Measure <header> height
+
+        // Set the header height as a global CSS variable
+        document.documentElement.style.setProperty('--header-height', headerHeight + 'px');
+    }
+
+    // Run on load
+    adjustPageOffset();
+
+    // Run again on resize (in case header height changes)
+    $(window).on('resize', function() {
+        adjustPageOffset();
     });
 });
