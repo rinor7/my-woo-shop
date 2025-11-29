@@ -199,7 +199,7 @@ body {
         .site-main {
             display: flex;
             flex-direction: column;
-            row-gap: 50px;
+            row-gap: 40px;
             @include min-md {
                 row-gap: 60px;
             }
@@ -208,5 +208,23 @@ body {
             }
         }
     }
+    // &.page-template-contact {
+    //     .gallery__section, .reviews__section {
+    //         margin-top: 40px;
+    //         @include min-md {
+    //             margin-top: 60px;
+    //         }
+    //     }
+    //     .reviews__section {
+    //         .container {
+
+    //         }
+    //     }
+    //     .gallery__section {
+    //         .mySwiper-gallery {
+    //             padding-left: 0;
+    //         }
+    //     }
+    // }
 }
 /* General style END*/

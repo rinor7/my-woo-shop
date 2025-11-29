@@ -210,6 +210,9 @@ header {
                          height: 100%;
                          position: relative;
                          padding-top: 170px;
+                         @include md {
+                            justify-content: flex-start;
+                         }
                          li {
                             //  &:last-of-type {
                             //      padding-bottom: 20px;

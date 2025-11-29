@@ -153,10 +153,13 @@ if (!($banner['disable_section'] ?? false)):
         </div>
     </div>
 </section>
+
 </div>
 <?php endif; ?>
 
+<?php get_template_part('includes/blocks/block-reviews', null, array()); ?>
 
+<?php get_template_part('includes/blocks/block-infinite-swiper', null, array()); ?>
 
 </main>
 

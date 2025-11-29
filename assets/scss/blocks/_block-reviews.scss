@@ -27,7 +27,7 @@
             display: grid;
             grid-template-columns: 1fr;
             min-height: 320px;
-
+            height: auto;
             @include min-md {
                 grid-template-columns: 1fr 1fr;
                 align-items: center;
