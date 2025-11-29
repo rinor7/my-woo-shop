@@ -71,7 +71,7 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 			<div class="account-tab-content" id="tab-register">
 				<h2><?php esc_html_e( 'Register', 'woocommerce' ); ?></h2>
 
-				<form method="post" class="woocommerce-form woocommerce-form-register register" <?php do_action( 'woocommerce_register_form_tag' ); ?> >
+				<form method="post" class="woocommerce-form woocommerce-form-register register" novalidate="novalidate" <?php do_action( 'woocommerce_register_form_tag' ); ?> >
 
 					<?php do_action( 'woocommerce_register_form_start' ); ?>
 
@@ -114,11 +114,16 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 				</form>
 			</div>
 		</div>
-	<?php else : ?>
-
-		<p><?php esc_html_e( 'Registration is currently disabled. If you need to create an account, please contact support.', 'woocommerce' ); ?></p>
-
 	<?php endif; ?>
+</div>
+
+<?php if ( 'yes' !== get_option( 'woocommerce_enable_myaccount_registration' ) ) : ?>
+
+	<div class="woocommerce-account-container">
+		<p><?php esc_html_e( 'Registration is currently disabled. If you need to create an account, please contact support.', 'woocommerce' ); ?></p>
+	</div>
+
+<?php endif; ?>
 </div>
 
 <style>
