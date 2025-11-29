@@ -107,3 +107,22 @@ add_action('wp_enqueue_scripts', function() {
     wp_dequeue_style('photoswipe-default-skin');
 });
 
+add_filter('render_block', function( $content, $block ) {
+
+    if ( isset($block['blockName']) && $block['blockName'] === 'woocommerce/product-new' ) {
+
+        // Load your custom template file
+        $custom_file = get_stylesheet_directory() . '/woocommerce-blocks/product-new.php';
+
+        if ( file_exists( $custom_file ) ) {
+            ob_start();
+            include $custom_file;
+            return ob_get_clean();
+        }
+
+        // Fallback if file is missing
+        return do_shortcode('[products limit="4"]');
+    }
+
+    return $content;
+}, 10, 2);

@@ -34,7 +34,10 @@
                     }
                 }
             }
-            .wc-block-checkout__sidebar{
+            .wc-block-checkout__sidebar {
+                @media (min-width: 768px) {
+                    top: 60px;
+                }
                 .wp-block-woocommerce-checkout-order-summary-block {
                     border-color: $grey-03;
                 }

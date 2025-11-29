@@ -3,7 +3,7 @@
 }
 
 body {
-    &.archive, &.page-template-page-shop {
+    &.archive {
         .woocommerce-products-header {
             z-index: 1;
             h1 {
@@ -106,7 +106,16 @@ body {
             }
         }
     }
-    &.page-template-page-shop {
+    &.woocommerce-cart {
+        .row-listing {
+            row-gap: 24px;
+            @include md {
+                // row-gap: 24px;   
+            }
+        }
+        .wp-block-heading {
+            margin-bottom: 24px;
+        }
     }
 }
 
