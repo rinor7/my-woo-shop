@@ -5,6 +5,7 @@
 body {
     &.archive, &.page-template-page-shop {
         .woocommerce-products-header {
+            z-index: 1;
             h1 {
 
             }
@@ -110,7 +111,9 @@ body {
 }
 
 .site-main {
-    margin-top: 16px;
+    @include min-md {
+        // margin-top: 16px;
+    }
     .woocommerce-breadcrumb {
         margin-bottom: 16px;
         a, font {

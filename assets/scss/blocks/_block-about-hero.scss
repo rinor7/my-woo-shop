@@ -17,7 +17,9 @@
         padding-bottom: 40px;
         
         &.align-flex-start {
-            align-self: flex-start;
+            @include min-md {
+                align-self: flex-start;
+            }
         }
         
         &.align-center {

@@ -30,7 +30,7 @@ Menu.init();
 // Header change on scroll
 $(document).ready(function() {
   $(window).scroll(function(){
-      if ($(this).scrollTop() > 70) {
+      if ($(this).scrollTop() > 75) {
          $('.logo_header').addClass('logo-change-on-scroll'); 
          $('.logo_site').addClass('logo-change-on-scroll'); 
          $('.headerbar').addClass('reduce-header-height-on-scroll');
