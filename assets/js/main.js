@@ -37,14 +37,7 @@ $(document).ready(function() {
         //  $('.navbar-toggler2').addClass('scroll-hamburger');
          $('header').addClass('shadow-show-on-scroll');
          $('body').addClass('body-on-scroll');
-      } else {
-         $('.logo_header').removeClass('logo-change-on-scroll');
-         $('.logo_site').removeClass('logo-change-on-scroll');
-         $('.headerbar').removeClass('reduce-header-height-on-scroll');
-        //  $('.navbar-toggler2').removeClass('scroll-hamburger');
-         $('header').removeClass('shadow-show-on-scroll');
-         $('body').removeClass('body-on-scroll');
-      }
+      } 
       if ($(this).scrollTop() > 30) {
         $('body:not(.admin-bar)').addClass('body-on-scroll');
      } else {
