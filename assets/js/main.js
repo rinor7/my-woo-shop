@@ -297,19 +297,29 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Calculate Header Height
-jQuery(document).ready(function($) {
-    function adjustPageOffset() {
-        var headerHeight = $('header').outerHeight(); // Measure <header> height
-
+function adjustPageOffset() {
+    var headerHeight = $('header').outerHeight(); // Measure <header> height
+    
+    if (headerHeight > 0) {
         // Set the header height as a global CSS variable
         document.documentElement.style.setProperty('--header-height', headerHeight + 'px');
     }
+}
 
-    // Run on load
-    adjustPageOffset();
-
-    // Run again on resize (in case header height changes)
-    $(window).on('resize', function() {
-        adjustPageOffset();
+// Run immediately and on ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+            adjustPageOffset();
+        }, 70);
     });
+} else {
+    setTimeout(function() {
+        adjustPageOffset();
+    }, 70);
+}
+
+// Run again on resize (in case header height changes)
+jQuery(window).on('resize', function() {
+    adjustPageOffset();
 });
