@@ -150,7 +150,7 @@ h3 {
      &.body-on-scroll {
          header {
              width: 100%;
-             position: fixed;
+             position: fixed!important;
              top: 0;
          }
          #page {
@@ -204,7 +204,7 @@ body {
                 row-gap: 60px;
             }
             .block-small-swiper {
-                margin-top: -50px;
+                margin-top: -40px;
             }
         }
     }
