@@ -183,7 +183,7 @@ header {
             background: unset;
          }
          .menu-item-custom-cart, .logo_header {
-            filter: brightness(.5);
+            // filter: brightness(.5);
          }
          &.rightmenu, &.centerized-logo {
              @include min-xs {

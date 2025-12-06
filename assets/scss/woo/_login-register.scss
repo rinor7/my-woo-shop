@@ -1,4 +1,4 @@
-.woocommerce-account-container {
+.woocommerce-account-container, .woocommerce-ResetPassword.lost_reset_password {
   max-width: 700px;
   margin: 0 auto;
 
@@ -6,6 +6,15 @@
     display: flex;
     flex-direction: column;
     row-gap: 5px;
+    .woocommerce-form-row.form-row {
+      input {
+        width: 100%;
+        padding-left: 20px !important;
+        border-radius: 20px;
+        color: #432818;
+        border: 1px solid #aaa;
+      }
+    }
   }
 
   .woocommerce-privacy-policy-text {
@@ -47,7 +56,30 @@
       display: block;
     }
   }
-  .woocommerce-button.woocommerce-form-login__submit, .woocommerce-button.woocommerce-form-register__submit {
+  .woocommerce-button.woocommerce-form-login__submit, .woocommerce-button.woocommerce-form-register__submit, .woocommerce-Button {
     @include button;
+  }
+}
+
+.woocommerce-lost-password {
+  .site-default{
+    display: flex;
+    align-items: center;
+    .woocommerce {
+      .woocommerce-ResetPassword.lost_reset_password {
+        border: 1px solid #cfc8d8;
+        padding: 20px;
+        margin: auto;
+        text-align: left;
+        border-radius: 5px;
+      }
+      input {
+        width: 100%;
+        padding-left: 20px !important;
+        border-radius: 20px;
+        color: #432818;
+        border: 1px solid #aaa;
+      }
+    }
   }
 }

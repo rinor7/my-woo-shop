@@ -160,9 +160,14 @@ h3 {
      }
  }
 
-#page, #footer-site {
+#page {
     top: var(--header-height);
 }
+
+#page + #footer-site {
+    top: var(--header-height);
+}
+
 
 .wpcf7-not-valid-tip {
     display: none;
