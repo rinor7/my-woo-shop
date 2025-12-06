@@ -212,7 +212,6 @@ header {
                          padding-top: 170px;
                          @include md {
                             justify-content: flex-start;
-                            
                          }
                          li {
                             //  &:last-of-type {
@@ -249,7 +248,7 @@ header {
             }
          }
          .site-main {
-            overflow: hidden;
+            overflow-y: hidden!important;
          }
      }
  }

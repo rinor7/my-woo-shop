@@ -258,19 +258,3 @@ if ( class_exists( 'WooCommerce' ) ) {
                 </div>
             </div>
         </header>
-
-        <!-- <div class="site-custom"> -->
-        <!-- <script>
-        $(document).ready(function() {
-            function updatePadding() {
-                if ($(window).width() <= 976) {
-                    var headerHeight = $('#headerbar').outerHeight();
-                    $('.site-custom').css('padding-top', headerHeight + 'px');
-                } else {
-                    $('.site-custom').css('padding-top', '');
-                }
-            }
-            updatePadding();
-            $(window).resize(updatePadding);
-        });
-        </script> -->
