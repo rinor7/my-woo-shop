@@ -220,7 +220,7 @@ header {
                          }
                      }
                  }
-                 @include min-xs {
+                 @include min-md {
                      &:before {
                          position: absolute;
                          content: "";
