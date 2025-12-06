@@ -145,7 +145,7 @@ header {
     position: relative;
 }
 
-.header-sticky:not(.with-announcement) {
+body {
     header {
      position: sticky;
      top: 0;
@@ -153,12 +153,27 @@ header {
     }
  }
  
- .header-sticky {
+&.body-on-scroll {
+    #headerbar {
+        width: 100%;
+        position: fixed;
+        top: 0;
+    }
+}
+ 
+ 
+ body {
+    #navbarNav {
+        @include md {
+            top: calc(var(--header-height) + 30px)!important;
+        }
+    }
      &.body-on-scroll {
-         #headerbar {
-             width: 100%;
-             position: fixed;
-             top: 0;
+         #navbarNav {
+            @include md {
+                height: calc(100% - var(--header-height))!important;
+                top: calc(var(--header-height))!important;
+            }
          }
      }
  }
@@ -166,9 +181,6 @@ header {
  body {
      &.menu-open {
          overflow: hidden;
-         &:not(.minimalmenu) {
-             // overflow: hidden;
-         }
          &:before {
             width: 100%;
             height: 100%;
@@ -179,8 +191,8 @@ header {
             background-color: #000000a8;
          }
          .headerbar {
-            transition: unset;
-            background: unset;
+            // transition: unset;
+            // background: unset;
          }
          .menu-item-custom-cart, .logo_header {
             // filter: brightness(.5);
@@ -235,18 +247,18 @@ header {
                  } 
             }
          }
-         &.rightmenu {
-            @include xs {
-                .headerbar {
-                    #navbarNav {
-                        height: calc(100% - var(--header-height))!important;
-                        .navbar-nav { 
-                            padding-top: 20px;
-                        }
-                    }
-                }
-            }
-         }
+        //  &.rightmenu {
+        //     @include xs {
+        //         .headerbar {
+        //             #navbarNav {
+        //                 height: calc(100% - var(--header-height))!important;
+        //                 .navbar-nav { 
+        //                     padding-top: 20px;
+        //                 }
+        //             }
+        //         }
+        //     }
+        //  }
          .site-main {
             overflow-y: hidden!important;
          }
