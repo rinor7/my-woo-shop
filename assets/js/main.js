@@ -359,7 +359,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!backdrop) {
             backdrop = document.createElement('div');
             backdrop.className = 'mobile-menu-backdrop';
-            document.body.appendChild(backdrop);
+            // document.body.appendChild(backdrop);
+document.querySelector('#page').appendChild(backdrop);
         }
     };
 
