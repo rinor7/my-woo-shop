@@ -1,9 +1,6 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) exit;
-
-// Header
-global $header_type;
-include get_template_directory() . "/includes/headers/{$header_type}.php";
+get_header();
 ?>
 
 <?php
