@@ -85,30 +85,13 @@
                 height: 40px;
                 overflow: hidden;
                 padding: 5px 8px;
-                &:hover {
-                    
+                @include sm {
+                    height: 35px;
                 }
                 &.added {
                     display: none!important;
                 }
             }
-            // .yith-add-to-wishlist-button-block {
-            //     margin: 0;
-            //     height: 40px;
-            //     width: 40px;
-            //     background-color: $brown-03;
-            //     border-radius: 50%;
-            //     flex-shrink: 0;
-            //     a {
-            //         .yith-wcwl-add-to-wishlist-button__label {
-            //             font-size: 0;
-            //             display: none;
-            //         }
-            //         svg {
-            //             width: 22px;
-            //         }
-            //     }
-            // }
         }
         &:hover {
             .woocommerce-loop-product__link {
@@ -152,6 +135,10 @@ body {
         background-color: $brown-03;
         border-radius: 50%;
         flex-shrink: 0;
+        @include sm {
+            height: 35px;
+            width: 35px;
+        }
         a {
             .yith-wcwl-add-to-wishlist-button__label {
                 font-size: 0;
