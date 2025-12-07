@@ -188,8 +188,6 @@ body {
             padding: 16px 16px 16px 16px;
             overflow-y: auto;
             max-height: calc(100vh - 60px);
-                z-index: 9999;
-    position: relative;
             .navbar-nav {
                 -moz-column-gap: 30px;
                 column-gap: 30px;
@@ -222,10 +220,11 @@ body {
     }
 }
 .navbar-nav-mobile {
-    max-height: 100vh;
-    overflow-y: auto;
+    height: 100vh;
+    overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior: contain;
+    position: relative;
 }
 
 
@@ -241,6 +240,8 @@ body {
 }
 
 body.menu-open {
-    overflow: hidden;
-    overscroll-behavior: none;
+    // overflow: hidden;
+    // overscroll-behavior: none;
+    position: fixed;
+    width: 100%;
 }
