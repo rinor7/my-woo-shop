@@ -63,6 +63,9 @@ body {
             .col-lg-8, .col-lg-9 {
                 .sorting-filter {
                     margin-bottom: 24px!important;
+                    @include sm {
+                        margin-bottom: 1rem!important;
+                    }
                 }
                 .shop-page {
                     margin-bottom: 48px;

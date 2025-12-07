@@ -115,7 +115,7 @@
                         <?php } ?>
                         <ul>
                             <li class="menu-item-custom-wishlist flex">
-                                <a href="/wishlist/" aria-current="page">
+                                <a href="/wunschliste/" aria-current="page">
                                     <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/svg/heart.svg' ); ?>" alt="<?php esc_attr_e( 'Wishlist', 'base-theme' ); ?>">
                                     <span>Wunschliste</span>
                                 </a>
