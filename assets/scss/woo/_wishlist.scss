@@ -1,0 +1,14 @@
+#yith-wcwl-form {
+    table {
+        border-color: $brown-01;
+        thead, tr, tbody, td {
+            border-color: $brown-01;
+        }
+        tr {
+            th {
+                background-color: $brown-01;
+                color: $white;
+            }
+        }
+    }
+}
