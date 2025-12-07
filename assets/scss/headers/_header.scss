@@ -235,10 +235,10 @@ body {
 
 .mobile-menu-backdrop {
     position: fixed;
+    top: 0;
     left: 0;
     right: 0;
-    top: env(safe-area-inset-top);
-    bottom: env(safe-area-inset-bottom);
+    bottom: 0;
     background: rgba(0,0,0,0.7);
     z-index: 999;
     pointer-events: none;
