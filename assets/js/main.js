@@ -353,6 +353,7 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
     const body = document.body;
     let backdrop;
+    let scrollDisabled = false;
 
     const addBackdrop = () => {
         if (!backdrop) {
@@ -369,42 +370,32 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     };
 
-    // Detect when body gets or loses menu-open class
-    const observer = new MutationObserver(() => {
-        if (body.classList.contains('menu-open')) {
-            addBackdrop();
-        } else {
-            removeBackdrop();
-        }
-    });
-
-    observer.observe(body, { attributes: true, attributeFilter: ['class'] });
-});
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    const body = document.body;
-    let scrollY = 0;
-
-    const disableScroll = () => {
-        scrollY = window.scrollY;
-        document.addEventListener('touchmove', preventScroll, { passive: false });
-    };
-
-    const enableScroll = () => {
-        document.removeEventListener('touchmove', preventScroll, { passive: false });
-    };
-
     const preventScroll = (e) => {
         if (!e.target.closest('.navbar-nav-mobile')) {
             e.preventDefault();
         }
     };
 
+    const disableScroll = () => {
+        if (!scrollDisabled) {
+            document.addEventListener('touchmove', preventScroll, { passive: false });
+            scrollDisabled = true;
+        }
+    };
+
+    const enableScroll = () => {
+        if (scrollDisabled) {
+            document.removeEventListener('touchmove', preventScroll, { passive: false });
+            scrollDisabled = false;
+        }
+    };
+
     const observer = new MutationObserver(() => {
         if (body.classList.contains('menu-open')) {
+            addBackdrop();
             disableScroll();
         } else {
+            removeBackdrop();
             enableScroll();
         }
     });
