@@ -27,31 +27,31 @@ var Menu = {
     };
 Menu.init();
 
-// Header change on scroll
-$(document).ready(function() {
-  $(window).scroll(function(){
-      if ($(this).scrollTop() > 30) {
-         $('.logo_header').addClass('logo-change-on-scroll'); 
-         $('.logo_site').addClass('logo-change-on-scroll'); 
-         $('.headerbar').addClass('reduce-header-height-on-scroll');
-        //  $('.navbar-toggler2').addClass('scroll-hamburger');
-         $('header').addClass('shadow-show-on-scroll');
-         $('body').addClass('body-on-scroll');
-      } else {
-         $('.logo_header').removeClass('logo-change-on-scroll');
-         $('.logo_site').removeClass('logo-change-on-scroll');
-         $('.headerbar').removeClass('reduce-header-height-on-scroll');
-        //  $('.navbar-toggler2').removeClass('scroll-hamburger');
-         $('header').removeClass('shadow-show-on-scroll');
-         $('body').removeClass('body-on-scroll');
-      }
-      if ($(this).scrollTop() > 30) {
-        $('body:not(.admin-bar)').addClass('body-on-scroll');
-     } else {
-        $('body:not(.admin-bar)').removeClass('body-on-scroll');
-     }
-  });
-});
+// // Header change on scroll
+// $(document).ready(function() {
+//   $(window).scroll(function(){
+//       if ($(this).scrollTop() > 30) {
+//          $('.logo_header').addClass('logo-change-on-scroll'); 
+//          $('.logo_site').addClass('logo-change-on-scroll'); 
+//          $('.headerbar').addClass('reduce-header-height-on-scroll');
+//         //  $('.navbar-toggler2').addClass('scroll-hamburger');
+//          $('header').addClass('shadow-show-on-scroll');
+//          $('body').addClass('body-on-scroll');
+//       } else {
+//          $('.logo_header').removeClass('logo-change-on-scroll');
+//          $('.logo_site').removeClass('logo-change-on-scroll');
+//          $('.headerbar').removeClass('reduce-header-height-on-scroll');
+//         //  $('.navbar-toggler2').removeClass('scroll-hamburger');
+//          $('header').removeClass('shadow-show-on-scroll');
+//          $('body').removeClass('body-on-scroll');
+//       }
+//       if ($(this).scrollTop() > 30) {
+//         $('body:not(.admin-bar)').addClass('body-on-scroll');
+//      } else {
+//         $('body:not(.admin-bar)').removeClass('body-on-scroll');
+//      }
+//   });
+// });
 
 // for rightmenu.php header
 // $(document).ready(function() {
@@ -320,30 +320,63 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// Calculate Header Height
-function adjustPageOffset() {
-    var headerHeight = $('header').outerHeight(); // Measure <header> height
+// // Calculate Header Height
+// function adjustPageOffset() {
+//     var headerHeight = $('header').outerHeight(); // Measure <header> height
     
-    if (headerHeight > 0) {
-        // Set the header height as a global CSS variable
-        document.documentElement.style.setProperty('--header-height', headerHeight + 'px');
-    }
-}
+//     if (headerHeight > 0) {
+//         // Set the header height as a global CSS variable
+//         document.documentElement.style.setProperty('--header-height', headerHeight + 'px');
+//     }
+// }
 
-// Run immediately and on ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function() {
-        setTimeout(function() {
-            adjustPageOffset();
-        }, 70);
+// // Run immediately and on ready
+// if (document.readyState === 'loading') {
+//     document.addEventListener('DOMContentLoaded', function() {
+//         setTimeout(function() {
+//             adjustPageOffset();
+//         }, 70);
+//     });
+// } else {
+//     setTimeout(function() {
+//         adjustPageOffset();
+//     }, 70);
+// }
+
+// // Run again on resize (in case header height changes)
+// jQuery(window).on('resize', function() {
+//     adjustPageOffset();
+// });
+
+
+//add backdrop for mobile menu
+document.addEventListener("DOMContentLoaded", function () {
+    const body = document.body;
+    let backdrop;
+
+    const addBackdrop = () => {
+        if (!backdrop) {
+            backdrop = document.createElement('div');
+            backdrop.className = 'mobile-menu-backdrop';
+            document.body.appendChild(backdrop);
+        }
+    };
+
+    const removeBackdrop = () => {
+        if (backdrop) {
+            backdrop.remove();
+            backdrop = null;
+        }
+    };
+
+    // Detect when body gets or loses menu-open class
+    const observer = new MutationObserver(() => {
+        if (body.classList.contains('menu-open')) {
+            addBackdrop();
+        } else {
+            removeBackdrop();
+        }
     });
-} else {
-    setTimeout(function() {
-        adjustPageOffset();
-    }, 70);
-}
 
-// Run again on resize (in case header height changes)
-jQuery(window).on('resize', function() {
-    adjustPageOffset();
+    observer.observe(body, { attributes: true, attributeFilter: ['class'] });
 });

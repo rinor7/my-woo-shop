@@ -59,10 +59,16 @@ body {
 }
 
 .d-none-mobile {
-    @include md {
+    @include lg {
         display: none;
     }
 }
+
+// .menu-open {
+//     .site-main {
+//         overflow-y: hidden;
+//     }
+// }
 
 p,
 h2,
@@ -146,26 +152,26 @@ h3 {
     }
 }
 
-     &.body-on-scroll {
-         #header-site {
-             width: 100%;
-             position: fixed!important;
-             top: 0;
-         }
-         #page {
-            // top: 70px;
-            position: relative;
-         }
-     }
+    //  .body-on-scroll {
+    //      #header-site {
+    //          width: 100%;
+    //          position: fixed!important;
+    //          top: 0;
+    //      }
+    //      #page {
+    //         // top: 70px;
+    //         position: relative;
+    //      }
+    //  }
 
 
-#page {
-    top: var(--header-height);
-}
+// #page {
+//     top: var(--header-height);
+// }
 
-#page + #footer-site {
-    top: var(--header-height);
-}
+// #page + #footer-site {
+//     top: var(--header-height);
+// }
 
 
 .wpcf7-not-valid-tip {

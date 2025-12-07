@@ -1,6 +1,5 @@
-<?php //Template Name: About Us
-global $header_type; // required to access global variable
-include("includes/headers/{$header_type}.php"); 
+<?php /* Template Name: About Us */
+get_header();
 ?>
 
 <main id="primary" class="site-main site-about-us">
@@ -125,4 +124,4 @@ if (empty($banner['disable_section'])):
 
 </main>
 
-<?php include("includes/footers/default.php"); ?>
+<?php get_footer(); ?>

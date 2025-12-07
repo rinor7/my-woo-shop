@@ -3,10 +3,14 @@
 @import "other/fonts";
 @import "other/general";
 @import "layouts/error404";
+
 @import "headers/global-header-style";
 @import "headers/rightmenu";
 @import "headers/minimalmenu";
 @import "headers/centerized-logo";
+@import "headers/header";
+@import "headers/burger";
+
 @import "layouts/home";
 @import "footers/default"; 
 @import "contactform/contactform";
@@ -43,6 +47,9 @@
 
 /* WordPress Core
 -------------------------------------------------------------- */
+
+
+
 .alignnone {
   margin: 5px 20px 20px 0;
 }

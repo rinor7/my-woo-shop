@@ -29,6 +29,9 @@ $secondary-color: #000;
 $secondary-color-light: #000000a4;
 $grey-color: #888;
 
+$header-bar-height: 70px;
+$announcement-bar-height: 30px;
+
 @mixin transition {
     transition: all .3s ease-in-out;
     -webkit-transition: all .3s ease-in-out;
