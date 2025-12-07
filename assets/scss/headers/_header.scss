@@ -219,18 +219,25 @@ body {
         }
     }
 }
+.navbar-nav-mobile {
+    max-height: 100vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+}
 
 
 .mobile-menu-backdrop {
     position: fixed;
     left: 0;
     right: 0;
+    top: env(safe-area-inset-top);
+    bottom: env(safe-area-inset-bottom);
     background: rgba(0,0,0,0.7);
     z-index: 999;
     pointer-events: none;
-    top: env(safe-area-inset-top);
-    bottom: env(safe-area-inset-bottom);
 }
+
 body.menu-open {
     overflow: hidden;
     overscroll-behavior: none;
