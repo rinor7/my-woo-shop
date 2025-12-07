@@ -186,7 +186,7 @@ body {
         }
         .main-nav-toggle {
             padding: 16px 16px 16px 16px;
-            overflow-y: auto;
+            // overflow-y: auto;
             max-height: calc(100vh - 60px);
             .navbar-nav {
                 -moz-column-gap: 30px;
