@@ -38,11 +38,11 @@
                 justify-content: center;
                 border-radius: 6px;
                 overflow: hidden;
-                @include sm {
-                    height: 240px;
+                @include md {
+                    padding: 16px;
                 }
-                .attachment-woocommerce_thumbnail {
-
+                @include sm {
+                    height: 200px;
                 }
                 .product-gallery-thumbs {
                     display: none;
@@ -55,60 +55,13 @@
                 line-height: 20px;
                 letter-spacing: 0.56px;
             }
-            // .price {
-            //     display: flex;
-            //     column-gap: 8px;
-            //     row-gap: 4px;
-            //     flex-direction: row-reverse;
-            //     justify-content: flex-end;
-
-            //     > ins {
-            //         text-decoration: unset;
-            //         .amount {
-            //             bdi {
-            //                 font-size: 16px;
-            //                 line-height: 20px;
-            //                 font-weight: 700;
-            //                 letter-spacing: 0.64px;
-            //             }
-            //         }
-            //     }
-
-            //     > del {
-            //         align-items: center;
-            //         display: flex!important;
-            //         text-decoration-color: $grey-03;
-            //         .amount {
-            //             bdi {
-            //                 display: flex;
-            //                 font-size: 12px;
-            //                 line-height: 12px;
-            //                 font-weight: 400;
-            //                 letter-spacing: 0.56px;
-            //                 color: $grey-03;
-            //             }
-            //         }
-            //     }
-
-            //     &:not(:has(del)) {
-            //         .amount {
-            //             bdi {
-            //                 font-size: 16px;
-            //                 line-height: 20px;
-            //                 font-weight: 700;
-            //                 letter-spacing: 0.64px;
-            //             }
-            //         }    
-            //     }
-            // }
         }
         .product-actions-wrapper {
-            display: flex;
-            column-gap: 8px;
-            margin-top: auto;
-            align-items: center;
-            .product_type_variable, .product_type_simple.add_to_cart_button {
-                // background-color: $brown-02;
+            display: flex; 
+            column-gap: 8px; 
+            margin-top: auto; 
+            align-items: center; 
+            .product_type_variable, .product_type_simple.add_to_cart_button { 
                 @include button;
                 min-width: unset;
             }
