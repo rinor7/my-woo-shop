@@ -253,35 +253,31 @@ jQuery(function($) {
 
     // });
 
-    $(document).ready(function () {
-
-    $(".product-actions-wrapper").each(function () {
-        var wrapper = $(this);
-
-        // find wishlist inside this specific product card
-        var wishlist = wrapper.parent().find(".yith-add-to-wishlist-button-block").first();
-
-        if (wishlist.length) {
-
-            if ($("body").hasClass("single-product")) {
-
-                // move into product actions
-                wrapper.append(wishlist);
-
-            } else {
-
-                // remove on archive no matter what browser injects
-                wishlist.remove();
-            }
-        }
-    });
-
-    // safety removal for Safari iOS (some themes re-inject wishlist)
+    // function to remove wishlist everywhere except single product
+function removeWishlistEverywhereExceptSingle() {
     if (!$("body").hasClass("single-product")) {
         $(".yith-add-to-wishlist-button-block").remove();
     }
+}
 
+// run once
+removeWishlistEverywhereExceptSingle();
+
+// run after YITH events
+$(document).on("yith_wcwl_init added_to_wishlist removed_from_wishlist", function () {
+    removeWishlistEverywhereExceptSingle();
 });
+
+// run when WooCommerce updates fragments
+$(document).on("wc_fragments_loaded wc_fragments_refreshed", function () {
+    removeWishlistEverywhereExceptSingle();
+});
+
+// MutationObserver (catches any late injection on iOS)
+if (!$("body").hasClass("single-product")) {
+    const obs = new MutationObserver(removeWishlistEverywhereExceptSingle);
+    obs.observe(document.body, { childList: true, subtree: true });
+}
 
 });
 
