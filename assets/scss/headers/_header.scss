@@ -188,6 +188,8 @@ body {
             padding: 16px 16px 16px 16px;
             overflow-y: auto;
             max-height: calc(100vh - 60px);
+                z-index: 9999;
+    position: relative;
             .navbar-nav {
                 -moz-column-gap: 30px;
                 column-gap: 30px;
