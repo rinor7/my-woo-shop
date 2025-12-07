@@ -223,9 +223,12 @@ body {
 
 .mobile-menu-backdrop {
     position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.7);
-    z-index: 999; 
+    top: env(safe-area-inset-top);
+    left: 0;
+    right: 0;
+    bottom: env(safe-area-inset-bottom);
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
 }
 body.menu-open {
     overflow: hidden;
