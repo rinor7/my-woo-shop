@@ -124,4 +124,4 @@ if (empty($banner['disable_section'])):
 
 </main>
 
-<?php get_footer(); ?>
+<?php include("includes/footers/default.php");  ?>

@@ -311,8 +311,8 @@
                 .single-product-thumbnails {
                     display: flex;
                     column-gap: 12px;
+                    overflow: scroll;
                     @include sm {
-                        overflow: scroll;
                         padding-bottom: 10px;
                     }
                     .woocommerce-product-gallery__image {
@@ -320,6 +320,7 @@
                         width: 120px;
                         border-radius: 16px;
                         background-color: $grey-02;
+                        min-width: 120px;
                         @include sm {
                             flex: 0 0 auto;
                         }
@@ -389,12 +390,12 @@
                     @include lg {
                         row-gap: 24px;
                     }
-                    // .col {
-                    //     @include xs {
-                    //         flex: 0 0 50%;
-                    //         max-width: 50%;
-                    //     }
-                    // }
+                    .col {
+                        @include xs {
+                            flex: 0 0 50%;
+                            max-width: 50%;
+                        }
+                    }
                 }
                 &.products {
                    > h2 {
@@ -406,7 +407,7 @@
                         margin: auto;
                         position: relative;
                         padding-top: 40px;
-                        margin-bottom: 40px;
+                        margin-bottom: 20px;
                         font-weight: 600;
                         font-size: 24px;
                         line-height: 30px;
@@ -424,6 +425,7 @@
                         }
                         @include min-md {
                             font-size: 32px;
+                            margin-bottom: 40px;
                             line-height: 40px;
                         }
                     }

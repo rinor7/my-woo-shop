@@ -72,8 +72,11 @@ body {
                 }
                 .row-listing {
                     row-gap: 24px;
-                    @include md {
-                        // row-gap: 24px;   
+                    @include sm {
+                        .col {
+                            flex: 0 0 auto;
+                            width: 50%;
+                        } 
                     }
                 }
                 .col-12 {

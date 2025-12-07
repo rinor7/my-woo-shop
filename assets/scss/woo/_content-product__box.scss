@@ -25,6 +25,9 @@
         flex-direction: column;
         row-gap: 16px;
         height: 100%;
+        @include sm {
+            row-gap: 8px;
+        }
         .woocommerce-loop-product__link {
                 display: flex;
                 flex-direction: column;

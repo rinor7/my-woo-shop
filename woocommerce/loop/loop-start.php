@@ -9,6 +9,10 @@ if ( is_product_category( )) {
     $classes = 'row row-cols-lg-2 row-cols-xl-3 row-cols-md-2 row-cols-sm-2 row-listing';
 }
 
+if ( is_cart( )) {
+    $classes = 'row row-cols-lg-2 row-cols-xl-4 row-cols-md-2 row-cols-sm-2 row-listing is__cart';
+}
+
 ?>
 
 <div class="<?php echo esc_attr( $classes ); ?>">

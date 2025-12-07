@@ -1,8 +1,38 @@
 <?php 
 // Remove default thumbnail in the loop
+// remove_action('woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);
+
+// // Add gallery thumbnails inside one wrapper
+// add_action('woocommerce_before_shop_loop_item_title', 'show_gallery_in_loop', 10);
+// function show_gallery_in_loop() {
+//     global $product;
+//     $gallery_ids = $product->get_gallery_image_ids();
+
+//     echo '<div class="product-thumbnails-wrapper">'; // wrapper div starts
+
+//     if (!empty($gallery_ids)) {
+//         // Show first image as main
+//         echo wp_get_attachment_image($gallery_ids[0], 'woocommerce_thumbnail');
+
+//         // Show rest as thumbnails
+//         if (count($gallery_ids) > 1) {
+//             echo '<div class="product-gallery-thumbs">';
+//             foreach ($gallery_ids as $key => $id) {
+//                 if ($key === 0) continue; // skip first, already shown
+//                 echo wp_get_attachment_image($id, 'thumbnail');
+//             }
+//             echo '</div>';
+//         }
+//     } else {
+//         // fallback to featured image if no gallery
+//         echo get_the_post_thumbnail($product->get_id(), 'woocommerce_thumbnail');
+//     }
+
+//     echo '</div>'; // wrapper div ends
+// }
+
 remove_action('woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);
 
-// Add gallery thumbnails inside one wrapper
 add_action('woocommerce_before_shop_loop_item_title', 'show_gallery_in_loop', 10);
 function show_gallery_in_loop() {
     global $product;
@@ -14,13 +44,10 @@ function show_gallery_in_loop() {
         // Show first image as main
         echo wp_get_attachment_image($gallery_ids[0], 'woocommerce_thumbnail');
 
-        // Show rest as thumbnails
-        if (count($gallery_ids) > 1) {
+        // Show only second image as hover thumbnail
+        if (isset($gallery_ids[1])) {
             echo '<div class="product-gallery-thumbs">';
-            foreach ($gallery_ids as $key => $id) {
-                if ($key === 0) continue; // skip first, already shown
-                echo wp_get_attachment_image($id, 'thumbnail');
-            }
+            echo wp_get_attachment_image($gallery_ids[1], 'thumbnail');
             echo '</div>';
         }
     } else {
@@ -30,6 +57,7 @@ function show_gallery_in_loop() {
 
     echo '</div>'; // wrapper div ends
 }
+
 
 
 

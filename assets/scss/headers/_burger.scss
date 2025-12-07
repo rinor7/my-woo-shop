@@ -96,3 +96,11 @@
         outline: unset;
     }
 }
+
+.navbar-nav-mobile {
+    .navbar-toggler {
+        span {
+            border-color: $white!important;
+        }
+    }
+}

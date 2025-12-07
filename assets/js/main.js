@@ -240,46 +240,30 @@ var swiperGallery = new Swiper(".mySwiper-gallery", {
 // Move YITH Wishlist Button into custom wrapper
 jQuery(function($) {
 
-    // $(".product-actions-wrapper").each(function() {
-
-    //     var wrapper = $(this);
-
-    //     // find closest wishlist button related to this product
-    //     var wishlist = wrapper.closest("li.product, .product-collection, .product").find(".yith-add-to-wishlist-button-block").first();
-
-    //     if (wishlist.length) {
-    //         wrapper.append(wishlist);
-    //     }
-
-    // });
-
-    // function to remove wishlist everywhere except single product
-function removeWishlistEverywhereExceptSingle() {
-    if (!$("body").hasClass("single-product")) {
+    // remove any wishlist div on checkout completely
+    if ($("body").hasClass("woocommerce-cart")) {
         $(".yith-add-to-wishlist-button-block").remove();
+        return;
     }
-}
 
-// run once
-removeWishlistEverywhereExceptSingle();
+    $(".product-actions-wrapper").each(function() {
 
-// run after YITH events
-$(document).on("yith_wcwl_init added_to_wishlist removed_from_wishlist", function () {
-    removeWishlistEverywhereExceptSingle();
-});
+        var wrapper = $(this);
 
-// run when WooCommerce updates fragments
-$(document).on("wc_fragments_loaded wc_fragments_refreshed", function () {
-    removeWishlistEverywhereExceptSingle();
-});
+        var wishlist = wrapper
+            .closest("li.product, .product-collection, .product")
+            .find(".yith-add-to-wishlist-button-block")
+            .first();
 
-// MutationObserver (catches any late injection on iOS)
-if (!$("body").hasClass("single-product")) {
-    const obs = new MutationObserver(removeWishlistEverywhereExceptSingle);
-    obs.observe(document.body, { childList: true, subtree: true });
-}
+        if (wishlist.length) {
+            wrapper.append(wishlist);
+        }
+
+    });
 
 });
+
+
 
 
     
