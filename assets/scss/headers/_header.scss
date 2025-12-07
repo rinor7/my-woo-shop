@@ -237,12 +237,20 @@ body {
     position: fixed;
     left: 0;
     right: 0;
-    top: env(safe-area-inset-top);
-    bottom: env(safe-area-inset-bottom);
+    top: 0;                     /* changed */
+    bottom: 0;                  /* changed */
     background: rgba(0,0,0,0.7);
     z-index: 999;
     pointer-events: none;
+    mask-image: linear-gradient(
+        black calc(env(safe-area-inset-top)),
+        black calc(100% - env(safe-area-inset-bottom)),
+        transparent
+    );
 }
+
+
+
 
 body.menu-open {
     // overflow: hidden;
