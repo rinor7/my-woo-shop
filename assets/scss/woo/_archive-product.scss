@@ -116,6 +116,16 @@ body {
         .wp-block-heading {
             margin-bottom: 24px;
         }
+        .woocommerce {
+            .row-listing {
+                .col {
+                    @include sm {
+                        flex: 0 0 auto;
+                        width: 50%;
+                    }
+                }
+            }
+        }
     }
 }
 

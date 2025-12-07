@@ -240,6 +240,19 @@ var swiperGallery = new Swiper(".mySwiper-gallery", {
 // Move YITH Wishlist Button into custom wrapper
 jQuery(function($) {
 
+    // $(".product-actions-wrapper").each(function() {
+
+    //     var wrapper = $(this);
+
+    //     // find closest wishlist button related to this product
+    //     var wishlist = wrapper.closest("li.product, .product-collection, .product").find(".yith-add-to-wishlist-button-block").first();
+
+    //     if (wishlist.length) {
+    //         wrapper.append(wishlist);
+    //     }
+
+    // });
+
     $(".product-actions-wrapper").each(function() {
 
         var wrapper = $(this);
@@ -248,13 +261,21 @@ jQuery(function($) {
         var wishlist = wrapper.closest("li.product, .product-collection, .product").find(".yith-add-to-wishlist-button-block").first();
 
         if (wishlist.length) {
-            wrapper.append(wishlist);
+            // Only append if on single product page (not on archive/card pages)
+            if ($('body').hasClass('single-product')) {
+                wrapper.append(wishlist);
+            } else {
+                // Hide wishlist button on archive/card pages
+                wishlist.remove();
+            }
         }
 
     });
 
 });
 
+
+    
 
 // jQuery(function($) {
 
