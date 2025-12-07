@@ -253,24 +253,35 @@ jQuery(function($) {
 
     // });
 
-    // hide wishlist everywhere except single product page
-if (!$('body').hasClass('single-product')) {
-    $(".yith-add-to-wishlist-button-block").remove();
-}
+    $(document).ready(function () {
 
-// only run product action logic on single product page
-if ($('body').hasClass('single-product')) {
     $(".product-actions-wrapper").each(function () {
         var wrapper = $(this);
-        var wishlist = wrapper.closest("li.product, .product-collection, .product")
-                              .find(".yith-add-to-wishlist-button-block")
-                              .first();
+
+        // find wishlist inside this specific product card
+        var wishlist = wrapper.parent().find(".yith-add-to-wishlist-button-block").first();
 
         if (wishlist.length) {
-            wrapper.append(wishlist);
+
+            if ($("body").hasClass("single-product")) {
+
+                // move into product actions
+                wrapper.append(wishlist);
+
+            } else {
+
+                // remove on archive no matter what browser injects
+                wishlist.remove();
+            }
         }
     });
-}
+
+    // safety removal for Safari iOS (some themes re-inject wishlist)
+    if (!$("body").hasClass("single-product")) {
+        $(".yith-add-to-wishlist-button-block").remove();
+    }
+
+});
 
 });
 
