@@ -118,37 +118,6 @@ body {
         }
     }
 
-    
-    &.menu-open {
-        .navbar-collapse { 
-            &.show {
-                // left: -80%;
-            }
-        }
-        #page {
-            
-            &:before {
-                // content: '';
-                // position: fixed;
-                // top: 0;
-                // left: 0;
-                // width: 100%;
-                // height: 100%;
-                // background-color: rgba(0, 0, 0, 0.7);
-                // z-index: 999999;
-            }
-        }
-        // .modal-backdrop {
-        //     position: fixed;
-        //     top: 0;
-        //     left: 0;
-        //     width: 100%;
-        //     height: 100%;
-        //     background-color: rgba(0, 0, 0, 0.7);
-        //     z-index: 999999;
-        // }
-    }
-
     .navbar-nav-mobile {
         position: fixed;
         left: -100%;
@@ -186,9 +155,7 @@ body {
         }
         .main-nav-toggle {
             padding: 16px 16px 16px 16px;
-            // overflow-y: auto;
             max-height: calc(100vh - 80px);
-            // height: 100vh;
             overflow-y: scroll;
             -webkit-overflow-scrolling: touch;
             overscroll-behavior: contain;
@@ -200,7 +167,6 @@ body {
                 width: 100%;
                 li {
                     box-shadow: 0 3px 6px rgba(21, 48, 92, .0784313725);
-                    // margin: 0 32px;
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -224,15 +190,6 @@ body {
         }
     }
 }
-// .navbar-nav-mobile {
-//     // height: 100vh;
-//     max-height: calc(100vh - 60px);
-//     overflow-y: scroll;
-//     -webkit-overflow-scrolling: touch;
-//     overscroll-behavior: contain;
-//     position: relative;
-// }
-
 
 .mobile-menu-backdrop {
     position: absolute;
@@ -242,17 +199,13 @@ body {
     pointer-events: none;
 }
 
-
-#page {
-    padding-top: env(safe-area-inset-top);
-    padding-bottom: env(safe-area-inset-bottom);
-}
-
 body.menu-open {
-    // overflow: hidden;
-    // overscroll-behavior: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+     #page {
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
+    }
 }
