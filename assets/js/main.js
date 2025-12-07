@@ -380,3 +380,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
     observer.observe(body, { attributes: true, attributeFilter: ['class'] });
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const body = document.body;
+    let scrollY = 0;
+
+    const disableScroll = () => {
+        scrollY = window.scrollY;
+        document.addEventListener('touchmove', preventScroll, { passive: false });
+    };
+
+    const enableScroll = () => {
+        document.removeEventListener('touchmove', preventScroll, { passive: false });
+    };
+
+    const preventScroll = (e) => {
+        if (!e.target.closest('.navbar-nav-mobile')) {
+            e.preventDefault();
+        }
+    };
+
+    const observer = new MutationObserver(() => {
+        if (body.classList.contains('menu-open')) {
+            disableScroll();
+        } else {
+            enableScroll();
+        }
+    });
+
+    observer.observe(body, { attributes: true, attributeFilter: ['class'] });
+});
