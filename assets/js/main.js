@@ -253,24 +253,24 @@ jQuery(function($) {
 
     // });
 
-    $(".product-actions-wrapper").each(function() {
+    // hide wishlist everywhere except single product page
+if (!$('body').hasClass('single-product')) {
+    $(".yith-add-to-wishlist-button-block").remove();
+}
 
+// only run product action logic on single product page
+if ($('body').hasClass('single-product')) {
+    $(".product-actions-wrapper").each(function () {
         var wrapper = $(this);
-
-        // find closest wishlist button related to this product
-        var wishlist = wrapper.closest("li.product, .product-collection, .product").find(".yith-add-to-wishlist-button-block").first();
+        var wishlist = wrapper.closest("li.product, .product-collection, .product")
+                              .find(".yith-add-to-wishlist-button-block")
+                              .first();
 
         if (wishlist.length) {
-            // Only append if on single product page (not on archive/card pages)
-            if ($('body').hasClass('single-product')) {
-                wrapper.append(wishlist);
-            } else {
-                // Hide wishlist button on archive/card pages
-                wishlist.remove();
-            }
+            wrapper.append(wishlist);
         }
-
     });
+}
 
 });
 
