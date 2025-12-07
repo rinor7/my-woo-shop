@@ -234,16 +234,18 @@ body {
 
 
 .mobile-menu-backdrop {
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;           /* changed */
-    bottom: 0;        /* changed */
+    position: absolute;
+    inset: 0;
     background: rgba(0,0,0,0.7);
     z-index: 999;
     pointer-events: none;
 }
 
+
+#page {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+}
 
 
 body.menu-open {
